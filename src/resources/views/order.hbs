@@ -1,0 +1,49 @@
+{{>slider2
+
+title="DANH SÁCH ĐƠN HÀNG"
+pageCurrent="ĐƠN HÀNG"
+}}
+<div id="" class="content">
+    {{!-- start order --}}
+    <section class="content-order d-flex jc-center row pt-105">
+        <div class="container  row">
+            <div class="mb-40  col-1">
+                <div class="row text-center mb-24">
+
+                    <h2 class="title-text">ĐƠN HÀNG</h2>
+                </div>
+
+                <div class="content_item-content col-1 row">
+                    <div class="d-flex pd-15 jc-center ai-center row bg-yld">
+                        <div class="describe-text pd-5 col-3 ">TÊN ĐƠN HÀNG</div>
+                        <div class="describe-text pd-5 col-6">Mức lương</div>
+                        <div class="describe-text pd-5 col-6">Yêu cầu</div>
+                        <div class="describe-text pd-5 col-6">Nơi làm việc</div>
+                        <div class="describe-text pd-5 col-6">Ngày tuyển</div>
+                    </div>
+
+                    {{#each data}}
+                    <div class="d-flex pd-15 jc-center ai-center  row bg-wl">
+                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">{{this.nameOrder}}</a> </div>
+                        <div class=" describe-text pd-5 col-6">{{this.salary}}</div>
+                        <div class=" describe-text pd-5 col-6">{{this.request}}</div>
+                        <div class=" describe-text pd-5 col-6">{{this.workPlace}}</div>
+                        <div class=" describe-text pd-5 col-6">{{this.recruimentDay}}</div>
+
+                    </div>
+                    {{/each}}
+
+
+
+
+                </div>
+                <div class="row text-center mt-48">
+
+                    <a class="btn pd-16-24 bg-blue">Xem đơn hàng</a>
+                </div>
+            </div>
+
+
+    </section>
+    {{!-- end order --}}
+</div>

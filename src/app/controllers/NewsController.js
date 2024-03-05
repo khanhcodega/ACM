@@ -1,32 +1,33 @@
-const Nurse = require('../models/Nurse')
+const News = require('../models/News')
 const { mutipleMongooseToObject } = require('../../util/mongoose')
 
 const PAGE_SIZE = 9
-class NurseControler {
+class NewsController {
     index(req, res, next) {
         const page = req.query.page || 1
         const skipElement = (page - 1) * PAGE_SIZE
 
-        const currentPage = Nurse.find({})
+        const currentPage = News.find({})
             .skip(skipElement)
             .limit(PAGE_SIZE)
             .exec()
-        const nextPage = Nurse.find({})
+        const nextPage = News.find({})
             .skip(skipElement + PAGE_SIZE)
             .limit(PAGE_SIZE)
             .exec()
-        const numberPage = Nurse.countDocuments().exec()
+
+        const numberPage = News.countDocuments().exec()
 
         numberPage
-        .then(numberPage => {
-            console.log(numberPage);
+            .then(numberPage => {
+        console.log(numberPage);
         }).catch(err => {
             console.error(err);
         });
 
         Promise.all([currentPage, nextPage])
             .then(([currentData, nextData]) => {
-                res.render('nurse',
+                res.render('news',
                     {
                         currentData: mutipleMongooseToObject(currentData),
                         nextData: mutipleMongooseToObject(nextData)
@@ -36,7 +37,6 @@ class NurseControler {
                 res.status(500).json('sever error')
             })
     }
-
 }
 
-module.exports = new NurseControler
+module.exports = new NewsController

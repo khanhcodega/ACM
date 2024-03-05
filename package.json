@@ -5,12 +5,21 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --inspect src/index.js",
+    "beautiful": "prettier --single-quote --trailing-comma all --write 'src/**/*.{js,json,scss}'  --tab-width 4",
     "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all  --tab-width 4"  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khanhcodega/ACM.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged "
+    }
   },
   "keywords": [
     "ACM"
@@ -23,10 +32,14 @@
   "homepage": "https://github.com/khanhcodega/ACM#readme",
   "devDependencies": {
     "express": "^4.18.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "prettier": "3.2.5"
   },
   "dependencies": {
-    "express-handlebars": "^7.1.2"
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.2.0"
   }
 }

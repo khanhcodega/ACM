@@ -1,1 +1,61 @@
-<h1>News</h1>
+{{>slider2
+
+title="TIN TỨC"
+pageCurrent="TIN TỨC"
+}}
+<div class="nurse pt-105 pb-105 ">
+    <div class="d-flex jc-center">
+        <div class="container d-flex jc-center">
+            <div class="news-hot col-75 pd-h15">
+                <h2 class="title-text mb-16 pd-h15"> TIN TỨC NỔI BẬT</h2>
+                <div class="d-flex ">
+
+
+                    {{#each currentData}}
+                    <div class="mb-40 col-3 pd-h15  row-items">
+                        <div class="col-1 content-new">
+                            <a class="" href="https://acmjinzai.com/{{this.link}}">
+                                <img class=" text-center col-1" src="https://acmjinzai.com/{{this.image}}" alt="">
+                            </a>
+                            <div class=" pd-15 ">
+                                <div class="mb-16">
+                                    <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
+                                </div>
+                                <a href="https://acmjinzai.com/{{this.link}}">
+                                    <h6 class="mb-16 heading-text">{{this.heading}}</h6>
+                                </a>
+                                <p class="mb-16 describe-text">{{this.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{/each}}
+
+                </div>
+                <div class="d-flex jc-center">
+
+                    <div id="pagination"></div>
+                </div>
+            </div>
+            <div class="news-old col-4  pd-h15">
+                <h4 class="title-text mb-16">TIN TỨC CŨ HƠN</h4>
+                {{#each nextData}}
+                <div class="mb-24">
+                    <div class="mb-8">
+                        <a href="https://acmjinzai.com/{{this.link}}" class="heading-text">
+                            {{this.heading}}
+                        </a>
+                    </div>
+                    <div class="bd-b">
+                        <a href="https://acmjinzai.com/{{this.link}}">
+                            <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
+                        </a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+    </div>
+
+</div>

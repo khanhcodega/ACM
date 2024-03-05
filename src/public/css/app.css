@@ -211,6 +211,10 @@ img {
   margin-bottom: 16px;
 }
 
+.mb-10 {
+  margin-bottom: 8px;
+}
+
 .mb-8 {
   margin-bottom: 8px;
 }
@@ -282,7 +286,7 @@ img {
   line-height: 1.8;
 }
 
-#slider {
+.slider {
   background-image: url("https://acmjinzai.com/main_master/images/banner.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -292,22 +296,34 @@ img {
   position: relative;
 }
 
-#slider .title-text {
+.slider .title-text {
   color: #fff;
 }
 
-#slider .heading-text {
+.slider .heading-text {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
 }
 
-#slider .overlay {
+.slider .overlay {
   background-image: linear-gradient(to right, #08070a, rgba(62, 62, 35, 0.9294117647) 100%);
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  opacity: 0.7;
+}
+
+.slider2 .heading-text,
+.slider2 .span-text {
+  font-size: 13px;
+  color: #fff;
+  display: inline-block;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.slider2 .span-text {
   opacity: 0.7;
 }
 
@@ -425,24 +441,28 @@ footer .overlay {
   position: relative;
 }
 
-.ft-title-text {
+footer .title-text {
   color: #b9babd;
   font-size: 18px;
 }
 
-.tc {
+footer .describe-text {
   color: #b9babd;
-  font-size: 16px;
   line-height: 1.5;
 }
 
-.ts {
+footer .span-text {
   color: #b9babd;
   font-size: 12px;
+  display: block;
 }
 
 .mr-4 {
   margin-right: 4px;
+}
+
+.mr-10 {
+  margin-right: 10px;
 }
 
 .info-icon i {
@@ -462,9 +482,10 @@ footer .overlay {
   padding: 15px;
 }
 
-.footer-license p {
+.footer-license .describe-text {
   font-size: 14.66px;
   color: #b9babd;
+  line-height: 1.8;
 }
 
 .text-u {
@@ -477,6 +498,10 @@ footer .overlay {
 
 .bg-wl {
   background-color: rgb(255, 250, 232);
+}
+
+.bg-w {
+  background-color: #fff;
 }
 
 .bg-grl {
@@ -624,6 +649,36 @@ footer .overlay {
   position: absolute;
   right: -12px;
   bottom: 4px;
+}
+
+.row-items {
+  display: flex;
+  align-items: stretch;
+}
+
+.content-nav {
+  margin-top: -235px;
+}
+
+.content-nav a,
+.content-nav .span-text {
+  display: block;
+}
+
+.content-nav .describe-text {
+  color: #157be8;
+  font-size: 15px;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -3,7 +3,7 @@ const router = express.Router()
 
 const introduceController = require('../app/controllers/IntroduceController')
 
-router.use('/',introduceController.index)
+router.get('/',introduceController.index)
 
 module.exports = router
 
