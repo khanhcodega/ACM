@@ -7,9 +7,7 @@ pageCurrent="ĐIỀU DƯỠNG"
     <div class="container d-flex jc-center">
         <div class="news-hot col-75 pd-h15">
             <h2 class="title-text mb-16 pd-h15"> TIN TỨC ĐIỀU DƯỠNG NỔI BẬT</h2>
-            <div class="d-flex ">
-
-
+            <div class="d-flex " data-page="{{currentPage}}">
                 {{#each currentData}}
                 <div class="mb-40 col-3 pd-h15  row-items">
                     <div class="col-1 content-new">
@@ -29,11 +27,18 @@ pageCurrent="ĐIỀU DƯỠNG"
                 </div>
 
                 {{/each}}
-                <div class="d-flex jc-center">
-
-                    <div id="pagination"></div>
-                </div>
+                
             </div>
+            <div class="d-flex jc-center row">
+
+                    <div class="pagination">
+                        <a href="?page={{prevPage}}" class="prevPage">&laquo;</a>
+                        {{#each pageList}}
+                        <a href="?page={{this}}">{{this}}</a>
+                        {{/each}}
+                         <a href="?page={{nextPage}}" class="nextPage">&raquo;</a>
+                    </div>
+                </div>
         </div>
         <div class="news-old col-4  pd-h15">
             <h4 class="title-text mb-16">TIN TỨC CŨ HƠN</h4>

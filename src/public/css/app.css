@@ -641,14 +641,10 @@ footer .span-text {
 }
 
 .text {
-  position: relative;
-}
-
-.text.ellipsis::after {
-  content: "...";
-  position: absolute;
-  right: -12px;
-  bottom: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .row-items {
@@ -670,15 +666,28 @@ footer .span-text {
   font-size: 15px;
 }
 
-.pagination {
-  display: inline-block;
+.active a {
+  color: #157be8 !important;
 }
 
+/* Pagination links */
 .pagination a {
   color: black;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -7,9 +7,9 @@ const order = require('./order')
 function route(app) {
     app.use('/introduce',introduce)
     app.use('/nurse',nurse)
-    app.use('/',site)
     app.use('/news',news)
     app.use('/order',order)
+    app.use('/',site)
 
 }
 

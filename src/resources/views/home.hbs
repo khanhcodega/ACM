@@ -1,3 +1,4 @@
+
 {{>slider}}
 <div id="" class="content">
     <section class="content-nav d-flex jc-center  row">
@@ -27,58 +28,23 @@
     {{!-- start info --}}
     <section class="content-info d-flex jc-center pt-105 pb-105 row">
         <div class="container  d-flex">
+            {{#each programmes}}
             <div class=" col-2  text-center pd-16 mb-40">
-                <img class="col-4 mb-8"
-                    src="https://acmjinzai.com/main_master/images/chuongtrinh/icon-student_optimized.png" alt="">
+                <img class="col-4 mb-8" src="https://acmjinzai.com/{{this.image}}" alt="">
                 <div class="content_item-content">
-                    <h3 class="heading-text mb-20">DU HỌC SINH</h3>
-                    <p class="describe-text mb-16 pd-h16">Với mục tiêu tiếp nhận 300.000 du học sinh quốc tế vào
-                        năm 2022, Nhật Bản đang là lựa chọn ưu tiên của nhiều bạn trẻ các nước nói chung và Việt
-                        Nam nói riêng. Có thể nói tại Châu Á Nhật Bản là quốc gia có nền giáo dục và đào tạo có
-                        chất lượng hàng đầu – yếu tố then chốt tạo nên nguồn nhân lực chất lượng hàng đầu góp
-                        phần làm nên một Nhật Bản thần kỳ.</p>
+                    <h3 class="heading-text mb-20">{{this.heading}}</h3>
+                    <p class="describe-text mb-16 pd-h16">{{this.description}}</p>
                 </div>
             </div>
-            <div class=" col-2  text-center pd-16 mb-40">
-                <img class="col-4 mb-8"
-                    src="https://acmjinzai.com/main_master/images/chuongtrinh/icon-engineer_optimized.png" alt="">
-                <div class="content_item-content">
-                    <h3 class="heading-text mb-20">KỸ SƯ VIỆT - NHẬT</h3>
-                    <p class="describe-text mb-16 pd-h16">Chương trình kỹ sư là chương trình tiếp nhận chuyên gia, nhân
-                        lực có trình độ cao của Chính phủ Nhật Bản nhằm bù đắp cho sự thiếu hụt lực lượng lao động có
-                        trình độ kéo dài trong những năm qua.</p>
-                </div>
-            </div>
-            <div class=" col-2  text-center pd-16 mb-40">
-                <img class="col-4 mb-8"
-                    src="https://acmjinzai.com/main_master/images/chuongtrinh/icon-student_optimized.png" alt="">
-                <div class="content_item-content">
-                    <h3 class="heading-text mb-20">DU HỌC SINH</h3>
-                    <p class="describe-text mb-16 pd-h16">Với mục tiêu tiếp nhận 300.000 du học sinh quốc tế vào
-                        năm 2022, Nhật Bản đang là lựa chọn ưu tiên của nhiều bạn trẻ các nước nói chung và Việt
-                        Nam nói riêng. Có thể nói tại Châu Á Nhật Bản là quốc gia có nền giáo dục và đào tạo có
-                        chất lượng hàng đầu – yếu tố then chốt tạo nên nguồn nhân lực chất lượng hàng đầu góp
-                        phần làm nên một Nhật Bản thần kỳ.</p>
-                </div>
-            </div>
-            <div class=" col-2  text-center pd-16 mb-40">
-                <img class="col-4 mb-8"
-                    src="https://acmjinzai.com/main_master/images/chuongtrinh/icon-student_optimized.png" alt="">
-                <div class="content_item-content">
-                    <h3 class="heading-text mb-20">DU HỌC SINH</h3>
-                    <p class="describe-text mb-16 pd-h16">Với mục tiêu tiếp nhận 300.000 du học sinh quốc tế vào
-                        năm 2022, Nhật Bản đang là lựa chọn ưu tiên của nhiều bạn trẻ các nước nói chung và Việt
-                        Nam nói riêng. Có thể nói tại Châu Á Nhật Bản là quốc gia có nền giáo dục và đào tạo có
-                        chất lượng hàng đầu – yếu tố then chốt tạo nên nguồn nhân lực chất lượng hàng đầu góp
-                        phần làm nên một Nhật Bản thần kỳ.</p>
-                </div>
-            </div>
+            {{/each}}
+
+
         </div>
     </section>
     {{!-- end info --}}
 
     {{!-- start order --}}
-    <section class="content-order d-flex jc-center row">
+    <section class="content-order d-flex jc-center row pt-105">
         <div class="container  row">
             <div class="mb-40  col-1">
                 <div class="row text-center mb-24">
@@ -95,66 +61,21 @@
                         <div class="describe-text pd-5 col-6">Ngày tuyển</div>
                     </div>
 
+                    {{#each orders}}
                     <div class="d-flex pd-15 jc-center ai-center  row bg-wl">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">[Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA</a> </div>
-                        <div class=" describe-text pd-5 col-6">148,680 yên</div>
-                        <div class=" describe-text pd-5 col-6">THPT</div>
-                        <div class=" describe-text pd-5 col-6">NAGANO</div>
-                        <div class=" describe-text pd-5 col-6">01/12/2022</div>
+                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">{{this.nameOrder}}</a> </div>
+                        <div class=" describe-text pd-5 col-6">{{this.salary}}</div>
+                        <div class=" describe-text pd-5 col-6">{{this.request}}</div>
+                        <div class=" describe-text pd-5 col-6">{{this.workPlace}}</div>
+                        <div class=" describe-text pd-5 col-6">{{this.recruimentDay}}</div>
 
                     </div>
-                    <div class="d-flex pd-15 jc-center ai-center  row bg-grl">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">[Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA</a> </div>
-                        <div class=" describe-text pd-5 col-6">148,680 yên</div>
-                        <div class=" describe-text pd-5 col-6">THPT</div>
-                        <div class=" describe-text pd-5 col-6">NAGANO</div>
-                        <div class=" describe-text pd-5 col-6">01/12/2022</div>
-
-                    </div>
-                    <div class="d-flex pd-15 jc-center ai-center  row bg-wl">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">[Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA</a> </div>
-                        <div class=" describe-text pd-5 col-6">148,680 yên</div>
-                        <div class=" describe-text pd-5 col-6">THPT</div>
-                        <div class=" describe-text pd-5 col-6">NAGANO</div>
-                        <div class=" describe-text pd-5 col-6">01/12/2022</div>
-
-                    </div>
-                    <div class="d-flex pd-15 jc-center ai-center  row bg-grl">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">[Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA [Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA</a> </div>
-                        <div class=" describe-text pd-5 col-6">148,680 yên</div>
-                        <div class=" describe-text pd-5 col-6">THPT</div>
-                        <div class=" describe-text pd-5 col-6">NAGANO</div>
-                        <div class=" describe-text pd-5 col-6">01/12/2022</div>
-
-                    </div>
-                    <div class="d-flex pd-15 jc-center ai-center  row bg-wl">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">[Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA</a> </div>
-                        <div class=" describe-text pd-5 col-6">148,680 yên</div>
-                        <div class=" describe-text pd-5 col-6">THPT</div>
-                        <div class=" describe-text pd-5 col-6">NAGANO</div>
-                        <div class=" describe-text pd-5 col-6">01/12/2022</div>
-
-                    </div>
-                    <div class="d-flex pd-15 jc-center ai-center  row bg-grl">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">[Kiểm tra linh
-                                kiện nhựa] ĐÚC NHỰA</a> </div>
-                        <div class=" describe-text pd-5 col-6">148,680 yên</div>
-                        <div class=" describe-text pd-5 col-6">THPT</div>
-                        <div class=" describe-text pd-5 col-6">NAGANO</div>
-                        <div class=" describe-text pd-5 col-6">01/12/2022</div>
-
-                    </div>
+                    {{/each}}
 
                 </div>
                 <div class="row text-center mt-48">
 
-                    <a class="btn pd-16-24 bg-blue">Xem đơn hàng</a>
+                    <a href="/order" class="btn pd-16-24 bg-blue">Xem đơn hàng</a>
                 </div>
             </div>
 
@@ -245,76 +166,20 @@
                 <h2 class="title-text">Cảm nhận học viên</h2>
             </div>
             <div class=" d-flex jc-arrow">
-
+                {{#each feedbacks}}
                 <div class="pd-h15 col-3">
                     <div class="mb-40  feedback  text-center  pd-30 ">
                         <div class="avartar ">
-                            <img class="text-center"
-                                src="https://acmjinzai.com/miraiuploads/h%E1%BB%8Dc%20vien/e77d3caa14aee4f0bdbf-min.jpg"
-                                alt="" width="100" height="100">
+                            <img class="text-center" src="https://acmjinzai.com/{{this.image}}" alt="" width="100"
+                                height="100">
                             <span><i class="fa-solid fa-exclamation"></i></span>
                         </div>
-                        <p class="describe-text mb-48 mt-48">ACM là một doanh nghiệp vô cùng uy tín và chất
-                            lượng, nhờ
-                            biết được công ty mà tôi đã có thể tìm ra con đường mới cho bản thân.
-                            Tại đây tôi đã được các anh chị tư vấn và hướng dẫn tận tình, có được một môi trường học
-                            tập vô cùng tốt, rèn luyện thêm những kỹ năng mới.
-                            Cơ sở vật chất của công ty cũng vô cùng hiện đại và đầy đủ, khi đăng kí tham gia chương
-                            trình tại đây tôi được sinh hoạt trong kí túc xá của công ty, có cơ hội tiếp xúc với các
-                            thiết bị công nghệ thông tin.
-                            Giảng viên rất thân thiện và kinh nghiệm, dạy tận tâm và dễ hiểu.
-                            Hiện tại tôi đang chờ ngày để xuất cảnh sang Nhật Bản làm việc. Vì thế, có đôi lời cảm
-                            nhận gởi đến công ty, cám ơn tất cả mọi người vì đã giúp đỡ tôi trong thời gian qua.</p>
-                        <p class="name">Vương Hoàng Anh Khoa</p>
-                        <span class="position">CSE Student</span>
+                        <p class="describe-text mb-48 mt-48">{{this.description}}</p>
+                        <p class="name">{{this.name}}</p>
+                        <span class="position">{{this.position}}</span>
                     </div>
                 </div>
-                <div class="pd-h15 col-3">
-                    <div class="mb-40  feedback  text-center  pd-30 ">
-                        <div class="avartar ">
-                            <img class="text-center"
-                                src="https://acmjinzai.com/miraiuploads/h%E1%BB%8Dc%20vien/e77d3caa14aee4f0bdbf-min.jpg"
-                                alt="" width="100" height="100">
-                            <span><i class="fa-solid fa-exclamation"></i></span>
-                        </div>
-                        <p class="describe-text mb-48 mt-48">ACM là một doanh nghiệp vô cùng uy tín và chất
-                            lượng, nhờ
-                            biết được công ty mà tôi đã có thể tìm ra con đường mới cho bản thân.
-                            Tại đây tôi đã được các anh chị tư vấn và hướng dẫn tận tình, có được một môi trường học
-                            tập vô cùng tốt, rèn luyện thêm những kỹ năng mới.
-                            Cơ sở vật chất của công ty cũng vô cùng hiện đại và đầy đủ, khi đăng kí tham gia chương
-                            trình tại đây tôi được sinh hoạt trong kí túc xá của công ty, có cơ hội tiếp xúc với các
-                            thiết bị công nghệ thông tin.
-                            Giảng viên rất thân thiện và kinh nghiệm, dạy tận tâm và dễ hiểu.
-                            Hiện tại tôi đang chờ ngày để xuất cảnh sang Nhật Bản làm việc. Vì thế, có đôi lời cảm
-                            nhận gởi đến công ty, cám ơn tất cả mọi người vì đã giúp đỡ tôi trong thời gian qua.</p>
-                        <p class="name">Vương Hoàng Anh Khoa</p>
-                        <span class="position">CSE Student</span>
-                    </div>
-                </div>
-                <div class="pd-h15 col-3">
-                    <div class="mb-40  feedback  text-center  pd-30 ">
-                        <div class="avartar ">
-                            <img class="text-center"
-                                src="https://acmjinzai.com/miraiuploads/h%E1%BB%8Dc%20vien/e77d3caa14aee4f0bdbf-min.jpg"
-                                alt="" width="100" height="100">
-                            <span><i class="fa-solid fa-exclamation"></i></span>
-                        </div>
-                        <p class="describe-text mb-48 mt-48">ACM là một doanh nghiệp vô cùng uy tín và chất
-                            lượng, nhờ
-                            biết được công ty mà tôi đã có thể tìm ra con đường mới cho bản thân.
-                            Tại đây tôi đã được các anh chị tư vấn và hướng dẫn tận tình, có được một môi trường học
-                            tập vô cùng tốt, rèn luyện thêm những kỹ năng mới.
-                            Cơ sở vật chất của công ty cũng vô cùng hiện đại và đầy đủ, khi đăng kí tham gia chương
-                            trình tại đây tôi được sinh hoạt trong kí túc xá của công ty, có cơ hội tiếp xúc với các
-                            thiết bị công nghệ thông tin.
-                            Giảng viên rất thân thiện và kinh nghiệm, dạy tận tâm và dễ hiểu.
-                            Hiện tại tôi đang chờ ngày để xuất cảnh sang Nhật Bản làm việc. Vì thế, có đôi lời cảm
-                            nhận gởi đến công ty, cám ơn tất cả mọi người vì đã giúp đỡ tôi trong thời gian qua.</p>
-                        <p class="name">Vương Hoàng Anh Khoa</p>
-                        <span class="position">CSE Student</span>
-                    </div>
-                </div>
+                {{/each}}
             </div>
         </div>
     </section>
@@ -329,79 +194,27 @@
             </div>
 
             <div class=" d-flex jc-arrow ">
-
-                <div class="mb-40 col-3 pd-h15 ">
+                {{#each activities}}
+                <div class="mb-40 col-3 pd-h15 row-items">
                     <div class="col-1 content-new">
                         <a class="">
-                            <img class=" text-center col-1"
-                                src="https://acmjinzai.com/miraiuploads/h%E1%BB%8Dc%20vien/e77d3caa14aee4f0bdbf-min.jpg"
-                                alt="">
+                            <img class=" text-center col-1" src="https://acmjinzai.com/{{this.image}}" alt="">
                         </a>
                         <div class=" pd-24 ">
                             <div class="mb-16">
-                                <span class="span-text">TIN TỨC</span>
+                                <span class="span-text">{{this.title}}</span>
                             </div>
                             <a href=" ">
-                                <h3 class="mb-16 heading-text">Đôi nét về đơn hàng gia công kim loại tại Nhật Bản</h3>
+                                <h3 class="mb-16 heading-text text">{{this.heading}}</h3>
                             </a>
-                            <p class="mb-16 describe-text">Gia công kim loại là đơn hàng tiêu biểu được nhiều lao động
-                                lựa
-                                chọn khi
-                                xuất khẩu lao</p>
+                            <p class="mb-16 describe-text text">{{this.description}}</p>
 
-                            <a href="" class="btn bg-blue pd-6-12 mb-16 mt-16">Xem tin tức khác!</a>
+                            <a href="" class="btn bg-blue pd-6-12 mb-16 mt-16">Xem {{this.title}} khác!</a>
                         </div>
 
                     </div>
                 </div>
-                <div class="mb-40 col-3 pd-h15 ">
-                    <div class="col-1 content-new">
-                        <a class="">
-                            <img class=" text-center col-1"
-                                src="https://acmjinzai.com/miraiuploads/h%E1%BB%8Dc%20vien/e77d3caa14aee4f0bdbf-min.jpg"
-                                alt="">
-                        </a>
-                        <div class=" pd-24 ">
-                            <div class="mb-16">
-                                <span class="span-text">TIN TỨC</span>
-                            </div>
-                            <a href=" ">
-                                <h3 class="mb-16 heading-text">Đôi nét về đơn hàng gia công kim loại tại Nhật Bản</h3>
-                            </a>
-                            <p class="mb-16 describe-text">Gia công kim loại là đơn hàng tiêu biểu được nhiều lao động
-                                lựa
-                                chọn khi
-                                xuất khẩu lao</p>
-
-                            <a href="" class="btn bg-blue pd-6-12 mb-16 mt-16">Xem tin tức khác!</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="mb-40 col-3 pd-h15 ">
-                    <div class="col-1 content-new">
-                        <a class="">
-                            <img class=" text-center col-1"
-                                src="https://acmjinzai.com/miraiuploads/h%E1%BB%8Dc%20vien/e77d3caa14aee4f0bdbf-min.jpg"
-                                alt="">
-                        </a>
-                        <div class=" pd-24 ">
-                            <div class="mb-16">
-                                <span class="span-text">TIN TỨC</span>
-                            </div>
-                            <a href=" ">
-                                <h3 class="mb-16 heading-text">Đôi nét về đơn hàng gia công kim loại tại Nhật Bản</h3>
-                            </a>
-                            <p class="mb-16 describe-text">Gia công kim loại là đơn hàng tiêu biểu được nhiều lao động
-                                lựa
-                                chọn khi
-                                xuất khẩu lao</p>
-
-                            <a href="" class="btn bg-blue pd-6-12 mb-16 mt-16">Xem tin tức khác!</a>
-                        </div>
-
-                    </div>
-                </div>
+                {{/each}}
 
             </div>
         </div>
