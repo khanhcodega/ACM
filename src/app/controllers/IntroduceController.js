@@ -1,7 +1,7 @@
 class IntroduceController {
-    index(req,res) {
-        res.render('introduce')
+    index(req, res) {
+        res.render('introduce');
     }
 }
 
-module.exports = new IntroduceController
+module.exports = new IntroduceController();

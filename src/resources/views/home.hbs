@@ -1,14 +1,16 @@
 
+{{#> layout }}
 {{>slider}}
+
 <div id="" class="content">
     <section class="content-nav d-flex jc-center  row">
         <div class="container  d-flex">
-            <div class=" col-2  pd-16 mb-40">
-                <div class="latest-news bg-w">
+            <div class=" col-2  pd-16 mb-40 ">
+                <div class="latest-news bg-w bd-sd">
                     <div class=" d-flex">
-                        <div class="col-2 pd-30">
+                        <div class="col-2 pd-30 item-1">
                             <span class="span-text mb-10"><i class="fa-solid fa-calendar"></i> 01/12/2022</span>
-                            <a class="mb-8" href="">
+                            <a class="mb-8" href="/order">
                                 <h3 class="heading-text">
                                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                     Đơn hàng mới nhất
@@ -17,7 +19,7 @@
                             <a href="" class="describe-text"><i class="fa-regular fa-hard-drive"></i> ĐÚC NHỰA</a>
 
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 item-2">
                             <a href=""><img src="https://acmjinzai.com/main_master/images/donhang/order-2.jpg" alt=""
                                     width="100%"></a>
                         </div>
@@ -56,18 +58,18 @@
                     <div class="d-flex pd-15 jc-center ai-center row bg-yld">
                         <div class="describe-text pd-5 col-3 ">TÊN ĐƠN HÀNG</div>
                         <div class="describe-text pd-5 col-6">Mức lương</div>
-                        <div class="describe-text pd-5 col-6">Yêu cầu</div>
-                        <div class="describe-text pd-5 col-6">Nơi làm việc</div>
-                        <div class="describe-text pd-5 col-6">Ngày tuyển</div>
+                        <div class="describe-text pd-5 col-6 close-2">Yêu cầu</div>
+                        <div class="describe-text pd-5 col-6  close">Nơi làm việc</div>
+                        <div class="describe-text pd-5 col-6 close">Ngày tuyển</div>
                     </div>
 
                     {{#each orders}}
-                    <div class="d-flex pd-15 jc-center ai-center  row bg-wl">
+                    <div class="d-flex pd-15 jc-center ai-center  row bg-wl" data-order="{{@index}}">
                         <div class="  pd-5 col-3 "> <a href="" class="text-dark">{{this.nameOrder}}</a> </div>
                         <div class=" describe-text pd-5 col-6">{{this.salary}}</div>
-                        <div class=" describe-text pd-5 col-6">{{this.request}}</div>
-                        <div class=" describe-text pd-5 col-6">{{this.workPlace}}</div>
-                        <div class=" describe-text pd-5 col-6">{{this.recruimentDay}}</div>
+                        <div class=" describe-text pd-5 col-6 close-2">{{this.request}}</div>
+                        <div class=" describe-text pd-5 col-6 close">{{this.workPlace}}</div>
+                        <div class=" describe-text pd-5 col-6 close">{{this.recruimentDay}}</div>
 
                     </div>
                     {{/each}}
@@ -232,3 +234,4 @@
 
     </section>
 </div>
+{{/layout}}

@@ -1,3 +1,4 @@
+{{#> layout}}
 {{>slider2
 
 title="ĐIỀU DƯỠNG"
@@ -27,18 +28,18 @@ pageCurrent="ĐIỀU DƯỠNG"
                 </div>
 
                 {{/each}}
-                
+
             </div>
             <div class="d-flex jc-center row">
 
-                    <div class="pagination">
-                        <a href="?page={{prevPage}}" class="prevPage">&laquo;</a>
-                        {{#each pageList}}
-                        <a href="?page={{this}}">{{this}}</a>
-                        {{/each}}
-                         <a href="?page={{nextPage}}" class="nextPage">&raquo;</a>
-                    </div>
+                <div class="pagination">
+                    <a href="?page={{prevPage}}" class="prevPage">&laquo;</a>
+                    {{#each pageList}}
+                    <a href="?page={{this}}">{{this}}</a>
+                    {{/each}}
+                    <a href="?page={{nextPage}}" class="nextPage">&raquo;</a>
                 </div>
+            </div>
         </div>
         <div class="news-old col-4  pd-h15">
             <h4 class="title-text mb-16">TIN TỨC CŨ HƠN</h4>
@@ -60,3 +61,4 @@ pageCurrent="ĐIỀU DƯỠNG"
 
     </div>
 </div>
+{{/layout}}

@@ -23,6 +23,10 @@ img {
   border-style: none;
 }
 
+.open {
+  display: block !important;
+}
+
 .text-center {
   text-align: center !important;
 }
@@ -187,6 +191,14 @@ img {
   margin-top: 5px;
 }
 
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
 .mb-105 {
   margin-bottom: 105px;
 }
@@ -248,15 +260,9 @@ img {
   line-height: 1.4;
 }
 
-.grid {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .container {
   position: relative;
-  width: 1140px;
+  width: 100%;
 }
 
 #header {
@@ -270,8 +276,20 @@ img {
 }
 
 .navbar {
-  height: 60px;
   justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.navbar-menu {
+  display: none;
+}
+.navbar-menu span {
+  color: #96a1af;
+}
+
+.navbar-list {
+  display: flex;
 }
 
 .navbar-item {
@@ -286,6 +304,10 @@ img {
   line-height: 1.8;
 }
 
+.navbar-link:hover {
+  color: #1b212c;
+}
+
 .slider {
   background-image: url("https://acmjinzai.com/main_master/images/banner.jpg");
   background-attachment: fixed;
@@ -294,6 +316,10 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  width: 100%;
+}
+.slider .silder-content {
+  height: 600px;
 }
 
 .slider .title-text {
@@ -442,7 +468,7 @@ footer .overlay {
 }
 
 footer .title-text {
-  color: #b9babd;
+  color: #fff;
   font-size: 18px;
 }
 
@@ -522,6 +548,10 @@ footer .span-text {
   color: #fff !important;
 }
 
+.bd-sd {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
 .content-counter .number {
   color: #1b212c;
   text-transform: uppercase;
@@ -580,7 +610,7 @@ footer .span-text {
   border-radius: 50%;
   position: absolute;
   top: -90px;
-  right: 100px;
+  right: 34%;
 }
 
 .avartar span {
@@ -688,6 +718,102 @@ footer .span-text {
 /* Add a grey background color on mouse-over */
 .pagination a:hover:not(.active) {
   background-color: #ddd;
+}
+
+.pagination a {
+  padding: 10px;
+  display: block;
+  color: #157be8;
+  border: 1px solid #157be8;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/* PC*/
+@media (max-width: 992px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-list {
+    display: none;
+    flex-basis: 100%;
+    transition: all 0.3s ease;
+  }
+  .navbar-list .navbar-item {
+    display: block;
+  }
+  .navbar-list .navbar-item .navbar-link {
+    color: #96a1af;
+  }
+  #header .navbar-menu {
+    display: flex;
+  }
+  .close {
+    display: none;
+  }
+  .col-3 {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+  .col-6 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+@media (max-width: 768px) {
+  .close-2 {
+    display: none;
+  }
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-4,
+  .col-75,
+  .col-3,
+  .col-2 {
+    margin-top: 20px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .content-nav .item-1 {
+    order: 2;
+  }
+  .content-nav .item-1 {
+    order: 1;
+  }
+  .content-info .col-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+  .content-order .col-3 {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+  .content-order .col-6 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
