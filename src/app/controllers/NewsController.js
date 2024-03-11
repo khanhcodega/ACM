@@ -36,7 +36,7 @@ class NewsController {
                     currentPage: page,
                     nextPage,
                     prevPage,
-                    total,
+                    totalPage,
                 });
             })
             .catch((err) => {

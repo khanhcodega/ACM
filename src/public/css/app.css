@@ -701,32 +701,39 @@ footer .span-text {
 }
 
 /* Pagination links */
+.pagination {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+}
+.pagination li {
+  margin: 0 10px;
+  list-style: none;
+  /* width: 40px;
+  height: 40px; */
+  border-radius: 50px;
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+.pagination .dots {
+  margin: 0 10px;
+  list-style: none;
+  background-color: transparent;
+  cursor: default;
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: none;
+}
+.pagination .active {
+  background-color: #8bbef4;
+}
 .pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-/* Style the active/current link */
-.pagination a.active {
-  background-color: dodgerblue;
-  color: white;
-}
-
-/* Add a grey background color on mouse-over */
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
-
-.pagination a {
-  padding: 10px;
-  display: block;
-  color: #157be8;
+  padding: 15px 20px;
   border: 1px solid #157be8;
   border-radius: 50%;
-  margin-left: 4px;
+}
+.pagination span {
+  color: #157be8;
 }
 
 @media (min-width: 576px) {
@@ -773,12 +780,12 @@ footer .span-text {
     display: none;
   }
   .col-3 {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
   .col-6 {
-    flex: 0 0 20%;
-    max-width: 20%;
+    flex: 0 0 25%;
+    max-width: 25%;
   }
 }
 @media (max-width: 768px) {

@@ -35,6 +35,7 @@ class NurseControler {
                     currentPage: page,
                     nextPage,
                     prevPage,
+                    totalPage
                 });
             })
             .catch((err) => {

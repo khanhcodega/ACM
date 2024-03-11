@@ -31,14 +31,14 @@ pageCurrent="ĐIỀU DƯỠNG"
 
             </div>
             <div class="d-flex jc-center row">
-
-                <div class="pagination">
-                    <a href="?page={{prevPage}}" class="prevPage">&laquo;</a>
+                <ul class="pagination" current-page="{{currentPage}}" total-page="{{totalPage}}">
+                    {{!-- <a href="?page={{prevPage}}" class="prevPage"><i class="fa-solid fa-arrow-left"> </i></a>
                     {{#each pageList}}
                     <a href="?page={{this}}">{{this}}</a>
                     {{/each}}
-                    <a href="?page={{nextPage}}" class="nextPage">&raquo;</a>
-                </div>
+                    <a href="?page={{nextPage}}" class="nextPage"><i class="fa-solid fa-arrow-right"></i></a> --}}
+                </ul>
+
             </div>
         </div>
         <div class="news-old col-4  pd-h15">
