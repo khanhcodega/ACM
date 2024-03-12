@@ -43,6 +43,10 @@ class NewsController {
                 res.status(500).json('sever error');
             });
     }
+
+    show(req,res,next){
+        res.send('hehe')
+    }
 }
 
 module.exports = new NewsController();

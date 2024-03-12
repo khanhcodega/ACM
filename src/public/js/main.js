@@ -29,11 +29,34 @@ $(document).ready(function () {
     const totalPage = parseInt($('.pagination').attr('total-page'));
 
     $('.pagination').html(paginationFunction(totalPage, currentPage));
+
+
+    $('.owl-carousel').owlCarousel({
+        margin: 10,
+        loop: true,
+        // autoWidth: true,
+        items: 3,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            768:{
+                items:2,
+            },
+            992:{
+                items:3,
+            }
+        }
+    })
+
 });
 
 function paginationFunction(totalPage, pageNumber) {
     let beforePage = Math.max(pageNumber - 1, 1),
-    afterPage = Math.min(pageNumber + 1, totalPage);
+        afterPage = Math.min(pageNumber + 1, totalPage);
     let listTag = '';
 
     if (pageNumber > 1) {

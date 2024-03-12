@@ -1,4 +1,3 @@
-
 {{#> layout }}
 {{>slider}}
 
@@ -164,23 +163,26 @@
 
 
         <div class="container row mt-16  ">
-            <div class="row text-center pb-105">
+            <div class="row text-center ">
                 <h2 class="title-text">Cảm nhận học viên</h2>
             </div>
-            <div class=" d-flex jc-arrow">
+            <div class=" d-flex jc-arrow owl-carousel">
                 {{#each feedbacks}}
-                <div class="pd-h15 col-3">
-                    <div class="mb-40  feedback  text-center  pd-30 ">
-                        <div class="avartar ">
-                            <img class="text-center" src="https://acmjinzai.com/{{this.image}}" alt="" width="100"
-                                height="100">
-                            <span><i class="fa-solid fa-exclamation"></i></span>
+                <div class="pd-h15  item-feedback pt-105">
+                    
+                        <div class="mb-40  feedback  text-center  pd-30 ">
+                            <div class="avartar d-flex jc-center ">
+                                <div class="text-center img "
+                                    style="background-image: url('https://acmjinzai.com/{{this.image}}');" alt=""></div>
+                                <span><i class="fa-solid fa-exclamation"></i></span>
+                            </div>
+
+                            <p class="describe-text mb-48 mt-48">{{this.description}}</p>
+                            <p class="name">{{this.name}}</p>
+                            <span class="position">{{this.position}}</span>
                         </div>
-                        <p class="describe-text mb-48 mt-48">{{this.description}}</p>
-                        <p class="name">{{this.name}}</p>
-                        <span class="position">{{this.position}}</span>
                     </div>
-                </div>
+                
                 {{/each}}
             </div>
         </div>

@@ -541,34 +541,44 @@ footer .span-text {
     color: $black-color;
 }
 
-.content-feedback .avartar {
-    position: relative;
-}
-.content-new,
-.feedback {
-    position: relative;
+
+.content-new{
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-}
-.content-feedback img {
-    border-radius: 50%;
-    position: absolute;
-    top: -90px;
-    right: 34%;
-}
-.avartar span {
-    background-color: #167ce9;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    left: 54%;
-    bottom: -20px;
-    position: absolute;
+
 }
 
-.avartar i {
-    margin-top: 10px;
-    color: #fff;
+.item-feedback{
+    position: relative;
+    .feedback {
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        .avartar {
+            position: relative;
+            .img {
+                border-radius: 50%;
+                position: absolute;
+                background-size: cover;
+                top: -90px;
+                right: 34%;
+                height: 100px;
+                width: 100px;
+            }
+            span {
+                background-color: #167ce9;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                left: 54%;
+                bottom: -20px;
+                position: absolute;
+            }
+            i {
+                margin-top: 10px;
+                color: #fff;
+            }
+        }
+    }
 }
+
 
 .content-feedback .name {
     color: $blue-color;
@@ -640,34 +650,7 @@ footer .span-text {
     color: $blue-color !important;
 }
 
-/* Pagination links */
-// .pagination a {
-//     color: black;
-//     float: left;
-//     padding: 8px 16px;
-//     text-decoration: none;
-//     transition: background-color 0.3s;
-// }
 
-// /* Style the active/current link */
-// .pagination a.active {
-//     background-color: dodgerblue;
-//     color: white;
-// }
-
-// /* Add a grey background color on mouse-over */
-// .pagination a:hover:not(.active) {
-//     background-color: #ddd;
-// }
-// .pagination a {
-//     padding: 10px;
-//     display: block;
-//     color: $blue-color;
-//     border: 1px solid $blue-color;
-//     border-radius: 50%;
-//     margin-left: 4px;
-
-// }
 
 .pagination {
     display: flex;
@@ -713,5 +696,6 @@ footer .span-text {
         color: $blue-color;
     }
 }
+
 
 @import 'breakpoints';
