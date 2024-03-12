@@ -1,0 +1,67 @@
+{{>slider2
+
+title= order.nameOrder
+pageCurrent="ĐƠN HÀNG"
+}}
+<div class="order-detail pt-105 pb-105 d-flex jc-center">
+    <div class="container d-flex jc-center">
+        <div class="order-current col-75 pd-h15">
+            <h2 class="title-text mb-16 pd-h15"><i class="fa-solid fa-id-card"></i> {{order.nameOrder}}</h2>
+            <div class="d-flex  mb-48">
+
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Địa chỉ làm việc :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.workPlace}}</div>
+
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Công việc :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.workPlace}}</div>
+
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Thời gian làm việc :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.workPlace}}</div>
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Lương cơ bản :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.workPlace}}</div>
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Phí phải trả :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.workPlace}}</div>
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Lương thực nhận :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.salary}}</div>
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Số lượng cần tuyển :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.workPlace}}</div>
+                <div class="heading-text  mt-16 pd-5 col-3"><i class="fa-solid fa-check"></i> Trình độ :</div>
+                <div class="describe-text mt-16 pd-5 col-8">{{order.request}}</div>
+
+
+
+
+            </div>
+            <div class="row d-flex jc-center">
+                <div >
+                    <a class="btn pd-6-12 bg-blue">Ứng tuyển qua messager</a>
+                    <a href="/oder" class="btn pd-6-12 bg-yellow">Ứng tuyển ngay</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="order-old col-4  pd-h15">
+            <h4 class="title-text mb-16">ĐƠN HÀNG KHÁC</h4>
+            {{#each orders}}
+
+            <div class="mb-24">
+
+                <div class="mb-8">
+                    <a href="{{this.id}}" class="heading-text">
+                        <i class="fa-solid fa-id-card"></i> {{this.nameOrder}}
+                    </a>
+                </div>
+                <div class="bd-b">
+                    <a href="{{this.id}}">
+                        <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.recruimentDay}}   <i
+                                class="fa-solid fa-ellipsis"></i>  {{this.title}}</span>
+                    </a>
+                </div>
+
+            </div>
+
+            {{/each}}
+        </div>
+
+    </div>
+</div>

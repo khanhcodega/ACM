@@ -1,4 +1,4 @@
-const Nurse = require('../models/Nurse');
+const Nurse = require('../models/Nurses');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 const PAGE_SIZE = 9;
@@ -28,14 +28,14 @@ class NurseControler {
                 const nextPage = page < totalPage ? page + 1 : null;
                 const prevPage = page > totalPage ? page - 1 : null;
 
-                res.render('nurse', {
+                res.render('nurses', {
                     currentData: mutipleMongooseToObject(currentData),
                     nextData: mutipleMongooseToObject(nextData),
                     pageList,
                     currentPage: page,
                     nextPage,
                     prevPage,
-                    totalPage
+                    totalPage,
                 });
             })
             .catch((err) => {

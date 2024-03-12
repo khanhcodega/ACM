@@ -26,7 +26,8 @@ pageCurrent="ĐƠN HÀNG"
                     {{#each data}}
 
                     <div class="d-flex pd-15 jc-center ai-center  row bg-wl" data-order="{{@index}}">
-                        <div class="  pd-5 col-3 "> <a href="" class="text-dark">{{this.nameOrder}}</a> </div>
+                        <div class="  pd-5 col-3 "> <a href="order/{{this.id}}" class="text-dark">[{{this.title}}]{{this.nameOrder}}</a>
+                        </div>
                         <div class=" describe-text pd-5 col-6">{{this.salary}}</div>
                         <div class=" describe-text pd-5 col-6 close-2">{{this.request}}</div>
                         <div class=" describe-text pd-5 col-6 close">{{this.workPlace}}</div>

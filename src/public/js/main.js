@@ -1,7 +1,12 @@
 $(document).ready(function () {
     var currentUrl = window.location.pathname;
+    const parts = currentUrl.split('/');
+    const slug = parts.slice(0, -1).join('/');
+
     $('a.navbar-link').each(function () {
-        if ($(this).attr('href') === currentUrl) {
+        const nav = $(this).attr('href');
+
+        if (nav === currentUrl || nav === slug) {
             $(this).closest('.navbar-item').addClass('active');
         }
     });
@@ -19,7 +24,7 @@ $(document).ready(function () {
     });
 
     $('[data-order]').each(function () {
-        console.log($(this).attr('data-order'));
+        // console.log($(this).attr('data-order'));
         if ($(this).attr('data-order') % 2 != 0) {
             $(this).addClass('bg-grl');
         }
@@ -30,7 +35,6 @@ $(document).ready(function () {
 
     $('.pagination').html(paginationFunction(totalPage, currentPage));
 
-
     $('.owl-carousel').owlCarousel({
         margin: 10,
         loop: true,
@@ -39,19 +43,28 @@ $(document).ready(function () {
         autoplay: true,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
-        responsive:{
-            0:{
-                items:1,
+        responsive: {
+            0: {
+                items: 1,
             },
-            768:{
-                items:2,
+            768: {
+                items: 2,
             },
-            992:{
-                items:3,
-            }
+            992: {
+                items: 3,
+            },
+        },
+    });
+
+    $('.news-wrap-p img').each(function () {
+        const currentSrc = $(this).attr('src');
+        const addUrl = 'https://acmjinzai.com/';
+
+        if (currentSrc !== undefined && currentSrc !== '') {
+            // Thêm chuỗi ajax vào src
+            $(this).attr('src', addUrl + currentSrc);
         }
     })
-
 });
 
 function paginationFunction(totalPage, pageNumber) {

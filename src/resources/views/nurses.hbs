@@ -11,15 +11,15 @@ pageCurrent="ĐIỀU DƯỠNG"
             <div class="d-flex " data-page="{{currentPage}}">
                 {{#each currentData}}
                 <div class="mb-40 col-3 pd-h15  row-items">
-                    <div class="col-1 content-new">
-                        <a class="https://acmjinzai.com/{{this.link}}" href="https://acmjinzai.com/{{this.link}}">
+                    <div class="col-1 content-new" >
+                        <a class="" href="{{this.link}} " >
                             <img class=" text-center col-1" src="https://acmjinzai.com/{{this.image}}" alt="">
                         </a>
                         <div class=" pd-15 ">
                             <div class="mb-16">
                                 <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
                             </div>
-                            <a href=" https://acmjinzai.com/{{this.link}}">
+                            <a href="{{this.link}}">
                                 <h5 class="mb-16 heading-text">{{this.heading}}</h5>
                             </a>
                             <p class="mb-16 describe-text">{{this.description}}</p>
@@ -46,12 +46,12 @@ pageCurrent="ĐIỀU DƯỠNG"
             {{#each nextData}}
             <div class="mb-24">
                 <div class="mb-8">
-                    <a href="https://acmjinzai.com/{{this.link}}" class="heading-text">
+                    <a href="{{this.link}}" class="heading-text">
                         {{this.heading}}
                     </a>
                 </div>
                 <div class="bd-b">
-                    <a href="https://acmjinzai.com/{{this.link}}">
+                    <a href="{{this.link}}">
                         <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
                     </a>
                 </div>

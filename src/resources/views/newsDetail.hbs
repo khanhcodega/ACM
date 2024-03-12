@@ -1,0 +1,72 @@
+{{#> layout}}
+{{>slider2
+
+title=data.heading
+pageCurrent=titleNews
+page='detail'
+}}
+<div class="news-detail pt-105 pb-105 ">
+    <div class="d-flex jc-center">
+        <div class="container d-flex jc-center">
+            <div class="news-hot col-8 pd-h15">
+                {{!-- <h2 class="title-text mb-16 pd-h15"> {{data.heading}}</h2> --}}
+                <div class="d-flex ">
+                    {{{data.content}}}
+
+                </div>
+                <div class="d-flex  row">
+                    <div><a class="link" href="/tintuc">tin tức</a></div>
+                    <div><a class="link" href="/nurse">điều dưỡng</a></div>
+                    <div><a class="link" href="/tintuc">đơn hàng</a></div>
+
+                </div>
+            </div>
+            <div class="news-old col-3  pd-h15">
+                <div class=" mb-48 pd-6-12">
+                    <input class="form-control" placeholder="Tìm kiếm {{titleNews}}">
+                </div>
+
+                <div class=" mb-48">
+                    <h3 class="heading-text mb-16">Bài viết liên quan</h3>
+                    <ul>
+                        <li><a href="/tintuc">Tin tức </a><span>({{totalNews}})</span></li>
+                        <li><a href="/nurse">Tin điều dưỡng </a><span>({{totalNurse}})</span></li>
+                        <li><a href="/order">Tin đơn hàng </a><span>({{totalOrder}})</span></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="heading-text mb-16">Tin gần đây</h3>
+                    {{#each nearestData}}
+                    <div class="mb-24 d-flex neast-data jc-arrow">
+                        <div class="col-3 ">
+                            <a class="col" href="/{{this.link}} ">
+                                <img class=" text-center " src="https://acmjinzai.com/{{this.image}}" alt=""
+                                    width="100%">
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <div class="mb-8 ">
+                                <a href="/{{this.link}}" class="heading-text text">
+                                    {{this.heading}}
+                                </a>
+                            </div>
+                            <div class="bd-b">
+                                <a href="/{{this.link}}">
+                                    <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                    <div >
+                    <a class="btn pd-6-12 bg-blue">Xem thêm {{titleNews}}</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{{/layout}}

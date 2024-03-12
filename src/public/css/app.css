@@ -654,6 +654,10 @@ footer .span-text {
   border-bottom: 2px solid #eceef3;
 }
 
+.content-order a:hover {
+  color: #ffc300;
+}
+
 .news-hot .describe-text,
 .content-order .describe-text,
 .content-news .describe-text {
@@ -739,6 +743,81 @@ footer .span-text {
   color: #157be8;
 }
 
+.order-detail .order-current .title-text {
+  font-size: 32px;
+}
+.order-detail .order-current .heading-text {
+  font-size: 15px;
+  color: #606e7f;
+  font-weight: bold;
+}
+.order-detail .order-current .describe-text {
+  font-size: 15px;
+  color: #96a1af;
+}
+.order-detail .order-old .title-text {
+  font-size: 24px;
+  color: #157be8;
+}
+.order-detail .order-old .heading-text {
+  font-size: 18px;
+  color: #606e7f;
+  font-weight: bold;
+}
+.order-detail .order-old .span-text {
+  font-size: 12px;
+  color: #96a1af;
+}
+
+.detail .title-text {
+  font-size: 40px;
+}
+.detail .span-text {
+  text-transform: uppercase;
+}
+
+.news-detail .title-text {
+  font-weight: bold;
+}
+.news-detail .heading-text {
+  font-size: 18px;
+}
+.news-detail .link {
+  font-size: 11px;
+  color: #1b212c;
+  padding: 8px 10px;
+  text-transform: uppercase;
+  border: 1px solid #1b212c;
+  margin-left: 8px;
+}
+.news-detail .form-control {
+  border: 1px solid #1b212c;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+}
+.news-detail .form-control::placeholder {
+  color: #96a1af;
+  font-size: 16px;
+}
+.news-detail .form-control:focus {
+  border-color: none;
+  outline: none;
+}
+.news-detail ul li {
+  display: flex;
+  border-bottom: 1px solid #96a1af;
+  padding: 10px 0;
+  justify-content: space-between;
+}
+.news-detail ul li a {
+  color: #157be8;
+  font-size: 15px;
+}
+.news-detail ul li span {
+  color: #96a1af;
+  font-size: 15px;
+}
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

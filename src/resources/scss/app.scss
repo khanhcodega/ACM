@@ -541,13 +541,11 @@ footer .span-text {
     color: $black-color;
 }
 
-
-.content-new{
+.content-new {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-
 }
 
-.item-feedback{
+.item-feedback {
     position: relative;
     .feedback {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -579,7 +577,6 @@ footer .span-text {
     }
 }
 
-
 .content-feedback .name {
     color: $blue-color;
     font-size: 16px;
@@ -603,6 +600,10 @@ footer .span-text {
 }
 .content-news .span-text {
     border-bottom: 2px solid #eceef3;
+}
+
+.content-order a:hover {
+    color: $yellow-color;
 }
 
 .news-hot .describe-text,
@@ -650,8 +651,6 @@ footer .span-text {
     color: $blue-color !important;
 }
 
-
-
 .pagination {
     display: flex;
     background-color: #fff;
@@ -697,5 +696,99 @@ footer .span-text {
     }
 }
 
+.order-detail {
+    .order-current {
+        .title-text {
+            font-size: 32px;
+        }
+        .heading-text {
+            font-size: 15px;
+            color: $gray-color;
+            font-weight: bold;
+        }
+        .describe-text {
+            font-size: 15px;
+            color: $gray-light-color;
+        }
+    }
+
+    .order-old {
+        .title-text {
+            font-size: 24px;
+            color: $blue-color;
+        }
+        .heading-text {
+            font-size: 18px;
+            color: $gray-color;
+            font-weight: bold;
+        }
+        .span-text {
+            font-size: 12px;
+            color: $gray-light-color;
+        }
+    }
+}
+
+.detail{
+    .title-text{
+        font-size: 40px;
+    }
+    .span-text{
+        text-transform: uppercase;
+    }
+}
+.news-detail{
+    .title-text{
+        font-weight: bold;
+    }
+    .heading-text{
+        font-size: 18px;
+    }
+    .link{
+        font-size: 11px;
+        color: $black-color;
+        padding: 8px 10px;
+        text-transform: uppercase;
+        border: 1px solid $black-color;
+        margin-left: 8px;
+    }
+    .form-control{
+        border: 1px solid $black-color;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 16px;
+
+    }
+    .form-control::placeholder {
+        color:$gray-light-color ;
+        font-size: 16px;
+    }
+    .form-control:focus {
+        border-color: none;
+        outline: none;
+    }
+
+    ul{
+        li{
+            display: flex;
+            border-bottom: 1px solid $gray-light-color;
+            padding: 10px 0;
+            justify-content: space-between;
+            a{
+                color: $blue-color;
+                font-size: 15px;
+            }
+            span{
+                color: $gray-light-color;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .neast-data{
+        
+    }
+
+}
 
 @import 'breakpoints';

@@ -3,6 +3,7 @@
 
 title="TIN TỨC"
 pageCurrent="TIN TỨC"
+
 }}
 <div class="nurse pt-105 pb-105 ">
     <div class="d-flex jc-center">
@@ -35,11 +36,7 @@ pageCurrent="TIN TỨC"
                 </div>
                 <div class="d-flex jc-center row">
                     <ul class="pagination" current-page="{{currentPage}}" total-page="{{totalPage}}">
-                        {{!-- <a href="?page={{prevPage}}" class="prevPage"><i class="fa-solid fa-arrow-left"> </i></a>
-                        {{#each pageList}}
-                        <a href="?page={{this}}">{{this}}</a>
-                        {{/each}}
-                        <a href="?page={{nextPage}}" class="nextPage"><i class="fa-solid fa-arrow-right"></i></a> --}}
+                    
                     </ul>
                 </div>
             </div>
@@ -48,12 +45,12 @@ pageCurrent="TIN TỨC"
                 {{#each nextData}}
                 <div class="mb-24">
                     <div class="mb-8">
-                        <a href="https://acmjinzai.com/{{this.link}}" class="heading-text">
+                        <a href="{{this.link}}" class="heading-text">
                             {{this.heading}}
                         </a>
                     </div>
                     <div class="bd-b">
-                        <a href="https://acmjinzai.com/{{this.link}}">
+                        <a href="{{this.link}}">
                             <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
                         </a>
                     </div>

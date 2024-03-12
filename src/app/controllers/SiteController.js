@@ -1,8 +1,8 @@
 const { mutipleMongooseToObject } = require('../../util/mongoose');
-const Order = require('../models/Order');
-const Programme = require('../models/Programme');
-const NewsActivity = require('../models/NewsActivity');
-const Feedback = require('../models/Feedback');
+const Order = require('../models/Orders');
+const Programme = require('../models/Programmes');
+const NewsActivity = require('../models/NewsActivities');
+const Feedback = require('../models/Feedbacks');
 
 class SiteController {
     index(req, res, next) {
