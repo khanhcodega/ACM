@@ -818,6 +818,11 @@ footer .span-text {
   color: #96a1af;
   font-size: 15px;
 }
+.news-detail .news-wrap-p p {
+  margin-bottom: 16px;
+  margin-top: -8px;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

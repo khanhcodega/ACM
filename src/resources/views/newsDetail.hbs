@@ -2,7 +2,7 @@
 {{>slider2
 
 title=data.heading
-pageCurrent=titleNews
+pageCurrent=tag
 page='detail'
 }}
 <div class="news-detail pt-105 pb-105 ">
@@ -23,7 +23,7 @@ page='detail'
             </div>
             <div class="news-old col-3  pd-h15">
                 <div class=" mb-48 pd-6-12">
-                    <input class="form-control" placeholder="Tìm kiếm {{titleNews}}">
+                    <input class="form-control" placeholder="Tìm kiếm {{tag}}">
                 </div>
 
                 <div class=" mb-48">
@@ -61,7 +61,7 @@ page='detail'
                     {{/each}}
 
                     <div >
-                    <a class="btn pd-6-12 bg-blue">Xem thêm {{titleNews}}</a>
+                    <a class="btn pd-6-12 bg-blue" href="/{{link}}">Xem thêm {{tag}}</a>
                 </div>
                 </div>
             </div>

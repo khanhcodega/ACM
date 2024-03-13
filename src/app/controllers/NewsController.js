@@ -92,17 +92,28 @@ class NewsController {
                     nearestNews,
                     nearestNurse,
                 ] = results;
-                const data = newsData ? newsData : nurseData;
-                const titleNews = newsData ? 'tin tức' : 'điều dưỡng';
+                const data = newsData ? {
+                    data: newsData,
+                    tag: 'tin tức',
+                    link: 'tintuc'
+                } : {
+                    data: nurseData,
+                    tag: 'điều dưỡng',
+                    link: 'nurse'
+                }
+                // const titleNews = newsData ?  : 'điều dưỡng';
+                // const tagTitle = newsData ? 'tintuc' : 'nurse'
 
                 const nearestData = newsData ? nearestNews : nearestNurse;
                 res.render('newsDetail', {
-                    data: mongooseToObject(data),
+                    data: mongooseToObject(data.data),
                     nearestData: mutipleMongooseToObject(nearestData),
                     totalNews,
                     totalOrder,
                     totalNurse,
-                    titleNews
+                    tag: data.tag,
+                    link: data.link,
+
                 });
             })
             .catch((err) => {
