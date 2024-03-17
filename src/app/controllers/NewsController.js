@@ -1,6 +1,7 @@
 const News = require('../models/News');
 const Order = require('../models/Orders');
 const Nurse = require('../models/Nurses');
+const moment = require('moment'); // require
 const {
     mutipleMongooseToObject,
     mongooseToObject,
@@ -13,10 +14,12 @@ class NewsController {
         const skipElement = (page - 1) * PAGE_SIZE;
 
         const currentPage = News.find({})
+            .sort({ _id: -1 })
             .skip(skipElement)
             .limit(PAGE_SIZE)
             .exec();
         const nextPage = News.find({})
+            .sort({ _id: -1 })
             .skip(skipElement + PAGE_SIZE)
             .limit(PAGE_SIZE)
             .exec();
@@ -52,7 +55,6 @@ class NewsController {
     show(req, res, next) {
         const PAGE_SIZE = 6;
 
-        // res.send(req.params.slug)
         const newDetail = News.findOne({ link: 'tintuc/' + req.params.slug });
         const nurseDetail = Nurse.findOne({
             link: 'tintuc/' + req.params.slug,
@@ -92,20 +94,22 @@ class NewsController {
                     nearestNews,
                     nearestNurse,
                 ] = results;
-                const data = newsData ? {
-                    data: newsData,
-                    tag: 'tin tức',
-                    link: 'tintuc'
-                } : {
-                    data: nurseData,
-                    tag: 'điều dưỡng',
-                    link: 'nurse'
-                }
+                const data = newsData
+                    ? {
+                          data: newsData,
+                          tag: 'tin tức',
+                          link: 'tintuc',
+                      }
+                    : {
+                          data: nurseData,
+                          tag: 'điều dưỡng',
+                          link: 'nurse',
+                      };
                 // const titleNews = newsData ?  : 'điều dưỡng';
                 // const tagTitle = newsData ? 'tintuc' : 'nurse'
 
                 const nearestData = newsData ? nearestNews : nearestNurse;
-                res.render('newsDetail', {
+                res.render('slug/newsDetail', {
                     data: mongooseToObject(data.data),
                     nearestData: mutipleMongooseToObject(nearestData),
                     totalNews,
@@ -113,7 +117,40 @@ class NewsController {
                     totalNurse,
                     tag: data.tag,
                     link: data.link,
+                });
+            })
+            .catch((err) => {
+                res.status(500).json('sever error');
+            });
+    }
 
+    store(req, res, next) {
+        const PAGE_SIZE = 10;
+        const page = req.query.page || 1;
+        const skipElement = (page - 1) * PAGE_SIZE;
+
+        const currentPage = News.find({})
+            .sort({ _id: -1 })
+            .skip(skipElement)
+            .limit(PAGE_SIZE)
+            .exec();
+
+        const total = News.countDocuments().exec();
+
+        Promise.all([currentPage, total])
+            .then(([currentData, total]) => {
+                const totalPage = Math.ceil(total / PAGE_SIZE);
+                const pageList = [];
+                for (let i = 1; i <= totalPage; i++) {
+                    pageList.push(i);
+                }
+                console.log(page);
+
+                res.render('crud/store', {
+                    data: mutipleMongooseToObject(currentData),
+                    pageList,
+                    current: parseFloat(page),
+                    totalPage,
                 });
             })
             .catch((err) => {

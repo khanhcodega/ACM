@@ -10,8 +10,7 @@ pageCurrent="TIN TỨC"
         <div class="container d-flex jc-center">
             <div class="news-hot col-75 pd-h15">
                 <h2 class="title-text mb-16 pd-h15"> TIN TỨC NỔI BẬT</h2>
-                <div class="d-flex ">
-
+                <div class="d-flex contentWrapper">
 
                     {{#each currentData}}
                     <div class="mb-40 col-3 pd-h15  row-items">
@@ -36,26 +35,28 @@ pageCurrent="TIN TỨC"
                 </div>
                 <div class="d-flex jc-center row">
                     <ul class="pagination" current-page="{{currentPage}}" total-page="{{totalPage}}">
-                    
+
                     </ul>
                 </div>
             </div>
             <div class="news-old col-4  pd-h15">
                 <h4 class="title-text mb-16">TIN TỨC CŨ HƠN</h4>
-                {{#each nextData}}
-                <div class="mb-24">
-                    <div class="mb-8">
-                        <a href="{{this.link}}" class="heading-text">
-                            {{this.heading}}
-                        </a>
+                <div class="contentWrapper">
+                    {{#each nextData}}
+                    <div class="mb-24">
+                        <div class="mb-8">
+                            <a href="{{this.link}}" class="heading-text text">
+                                {{this.heading}}
+                            </a>
+                        </div>
+                        <div class="bd-b">
+                            <a href="{{this.link}}">
+                                <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="bd-b">
-                        <a href="{{this.link}}">
-                            <span class="span-text"><i class="fa-regular fa-calendar"></i> {{this.date}}</span>
-                        </a>
-                    </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
 
 

@@ -1,16 +1,19 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const Nurse = new Schema({
-    heading: { type: String },
-    description: { type: String },
-    date: { type: String },
-    link: { type: String },
+const Nurses = new Schema(
+    {
+        heading: { type: String },
+        description: { type: String },
+        date: { type: String },
+        link: { type: String, slug: 'name', unique: true },
 
-    image: { type: String, maxLength: 255 },
+        image: { type: String, maxLength: 255 },
+        content: { type: String },
+    },
+    {
+        timestamps: true,
+    },
+);
 
-    createAt: { type: Date, default: Date.now },
-    updateAt: { type: Date, default: Date.now },
-});
-
-module.exports = mongoose.model('Nurse', Nurse);
+module.exports = mongoose.model('Nurses', Nurses);

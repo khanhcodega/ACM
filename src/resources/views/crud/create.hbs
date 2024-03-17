@@ -1,0 +1,94 @@
+<div class="content pt-105 pb-105 d-flex jc-center crud">
+    <div class="container">
+        <div class="mb-24"> 
+            <button type="button" class="col-40 btn-type active" data-type="news">Tin Tức</button>
+            <button type="button" class="col-40 btn-type  " data-type="nurses">Điều dưỡng</button>
+            <button type="button" class="col-40 btn-type  "data-type="orders">Đơn hàng </button>
+        </div>
+        <div >
+            <form method="post" action="/manager/create"  class="contentWrapper">
+                <h3 class="heading mb-48">Tạo tin {{type}}</h3>
+
+                <div class="form-group ">
+                    <label for="heading" class="form-label">Tiêu đề</label>
+                    <input value="{{dataEdit.heading}}" rules="required" type="text" name="heading" id="heading"
+                        placeholder="VD: Katsuobushi cá ngừ bào - Tinh hoa ẩm thực xứ Phù Tang" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="description" class="form-label">Mô tả</label>
+                    <input value="{{dataEdit.description}}" rules="required" type="text" name="description" id="description" placeholder="VD: Quốc Khánh"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="date" class="form-label">Ngày thêm</label>
+                    <input value="{{dataEdit.date}}" rules="required" type="date" name="date" id="date" class="form-control"
+                        placeholder="dd-mm-yyyy">
+                    <span class="form-message"></span>
+                </div>
+                {{!-- <div class="form-group ">
+                    <label for="link" class="form-label">Liên kết</label>
+                    <input value="{{dataEdit.}}" rules="required" type="text" name="link" id="link" placeholder="VD: Đây là liên kết trang "
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div> --}}
+                <div class="form-group ">
+                    <label for="image" class="form-label">Ảnh đại diện</label>
+                    <input value="{{dataEdit.image}}" rules="required" type="text" name="image" id="image" aria-label="File browser example"
+                        class="form-control" placeholder="VD: https://image1.png">
+                    <span class="form-message"></span>
+                </div>
+                <textarea id="mytextarea" id="editorOne" class="mt-24" name="content">
+                    {{dataEdit.content}}
+               </textarea>
+
+                <button type="submit" class="btn btn-submit">Thêm</button>
+                <button type="reset" class="btn">Làm mới</button>
+            </form>
+            {{!-- <button id='buttonOne' class="button_style" name="New Content">Press to set new content</button> --}}
+        </div>
+
+        {{!-- <div>
+            <table class="contentWrapper">
+                <thead>
+                    <tr>
+                        <th class="">#</th>
+                        <th class="">Tiêu đề</th>
+                        <th class="">Mô tả</th>
+                        <th class="">Ngày thêm</th>
+                        <th class="">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each data}}
+                    <tr>
+                        <td>{{sum @index 1}}
+                        </td> <!-- This will automatically generate the row index -->
+                        <td>
+                            <p class="text"> {{this.heading}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.description}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.date}}</p>
+                        </td>
+                        <td class="">
+                            <a href="/tintuc/{{this._id}}/edit"  class="btn btn-edit ">Sửa</a>
+                            <a href="{{this._id}}"  class="btn btn-delete mt-5">Xóa</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <div class="d-flex jc-center mt-24">
+
+                <ul class="pagination" current-page="{{current}}" total-page="{{totalPage}}">
+
+                </ul>
+            </div>
+        </div> --}}
+    </div>
+</div>

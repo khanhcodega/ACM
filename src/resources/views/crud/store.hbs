@@ -1,0 +1,72 @@
+<div class="content pt-105 pb-105 d-flex jc-center crud">
+    <div class="container ">
+        <div class="mb-24"> 
+            <button type="button" class="col-40 btn-get active" data-type="news">Tin Tức</button>
+            <button type="button" class="col-40 btn-get " data-type="nurses">Điều dưỡng</button>
+            <button type="button" class="col-40 btn-get "data-type="orders">Đơn hàng </button>
+        </div>
+        <h3 class="title-text text-center mb-48">Danh sách {{type}}</h3>
+
+        <div>
+            <table class="contentWrapper" >
+                <thead data-type="{{dataType}}">
+                    <tr>
+                        <th class="">#</th>
+                        <th class="">Tiêu đề</th>
+                        <th class="">Mô tả</th>
+                        <th class="">Ngày thêm</th>
+                        <th class="">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each data}}
+                    <tr>
+                        <td>{{sum @index 1}}
+                        </td> <!-- This will automatically generate the row index -->
+                        <td>
+                            <p class="text"> {{this.heading}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.description}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.date}}</p>
+                        </td>
+                        <td class="">
+                            <a href="/manager/{{this._id}}/edit" class="btn btn-edit ">Sửa</a>
+                            <a href="{{this._id}}?type={{dataType}}" data-name="{{this.heading}}" class="btn btn-delete mt-5">Xóa</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <div class="d-flex jc-center mt-24">
+
+                <ul class="pagination" current-page="{{current}}" total-page="{{totalPage}}" data-type="{{dataType}}">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="id01" class="modal ">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+        title="Close Modal">&times;</span>
+    <div class="d-flex jc-center">
+
+        <div class="container d-flex jc-center ">
+            <form class="modal-content text-center " action="" method="post">
+                <h1>Xóa bài viết</h1>
+
+                <p class="text"></p>
+
+                <div class="clearfix d-flex jc-center">
+                    <button type="button" class="col-40 cancelbtn">Hủy</button>
+                    <button type="submit" class="col-40 deletebtn">Xóa bỏ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

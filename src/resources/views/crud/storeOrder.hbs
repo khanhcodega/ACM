@@ -1,0 +1,60 @@
+<div class="content pt-105 pb-105 d-flex jc-center crud">
+    <div class="container ">
+        <div class="mb-24">
+            <button type="button" class="col-40 btn-get active" data-type="news">Tin Tức</button>
+            <button type="button" class="col-40 btn-get " data-type="nurses">Điều dưỡng</button>
+            <button type="button" class="col-40 btn-get " data-type="orders">Đơn hàng </button>
+        </div>
+        <h3 class="title-text text-center mb-48">Danh sách {{type}}</h3>
+
+        <div>
+            <table class="contentWrapper ">
+                <thead class="table-order" data-type="{{dataType}}"> 
+                    <tr>
+                        <th class="">#</th>
+                        <th class="">Tên đơn hàng</th>
+                        <th class="">Công việc</th>
+                        <th class="">Mức lương</th>
+                        <th class="">Trình dộ</th>
+                        <th class="">Ngày thêm</th>
+                        <th class="">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each data}}
+                    <tr>
+                        <td>{{sum @index 1}}
+                        </td> <!-- This will automatically generate the row index -->
+                        <td>
+                            <p class="text"> {{this.nameOrder}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.title}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.salary}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.request}}</p>
+                        </td>
+                        <td>
+                            <p class="text">{{this.recruimentDay}}</p>
+                        </td>
+                        <td class="">
+                            <a href="/manager/{{this._id}}/edit" class="btn btn-edit ">Sửa</a>
+                            <a href="{{this._id}}?type={{dataType}}" data-name="{{this.heading}}" class="btn btn-delete mt-5">Xóa</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <div class="d-flex jc-center mt-24">
+
+                <ul class="pagination" current-page="{{current}}" total-page="{{totalPage}}" data-type="{{dataType}}">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

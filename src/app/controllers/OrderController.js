@@ -25,7 +25,7 @@ class OrderController {
 
         Promise.all([order, orders])
             .then(([order, orders]) => {
-                res.render('orderDetail', {
+                res.render('slug/orderDetail', {
                     order: mongooseToObject(order),
                     orders: mutipleMongooseToObject(orders),
                 });

@@ -1,14 +1,23 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const Order = new Schema({
-    nameOrder: { type: String },
-    salary: { type: String },
-    request: { type: String },
-    workPlace: { type: String },
-    recruimentDay: { type: String },
-    createAt: { type: Date, default: Date.now },
-    updateAt: { type: Date, default: Date.now },
-});
+const Orders = new Schema(
+    {
+        nameOrder: { type: String },
+        salary: { type: String },
+        request: { type: String },
+        workPlace: { type: String },
+        recruimentDay: { type: String },
+        title: { type: String },
+        expense: { type: String },
+        quantity: { type: String },
+        salaryBasic: { type: String },
+        timeWork: { type: String },
 
-module.exports = mongoose.model('Order', Order);
+    },
+    {
+        timestamps: true,
+    },
+);
+
+module.exports = mongoose.model('Orders', Orders);

@@ -1,0 +1,77 @@
+<div class="content pt-105 pb-105 d-flex jc-center crud">
+    <div class="container">
+        {{!-- <h3 class="title-text text-center "></h3> --}}
+        <div class="contentWrapper">
+            <form method="post" action="/manager/create">
+                <h3 class="heading mb-48">Tạo đơn hàng mới</h3>
+
+                <div class="form-group ">
+                    <label for="nameOrder" class="form-label">Tiêu đề</label>
+                    <input value="{{dataEdit.nameOrder}}" rules="required" type="text" name="nameOrder" id="heading"
+                        placeholder="VD: Katsuobushi cá ngừ bào - Tinh hoa ẩm thực xứ Phù Tang" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                  <div class="form-group ">
+                    <label for="workPlace" class="form-label">Nơi làm việc</label>
+                    <input value="{{dataEdit.workPlace}}" rules="required" type="text" name="workPlace" id="description" placeholder="VD: Quốc Khánh"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="title" class="form-label">Công việc</label>
+                    <input value="{{dataEdit.title}}" rules="required" type="text" name="title" id="description" placeholder="VD: Quốc Khánh"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                 <div class="form-group ">
+                    <label for="timeWork" class="form-label">Thời gian làm việc</label>
+                    <input value="{{dataEdit.timeWork}}" rules="required" type="text" name="timeWork" id="heading"
+                        placeholder="VD: Katsuobushi cá ngừ bào - Tinh hoa ẩm thực xứ Phù Tang" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="salaryBasic" class="form-label">Lương cơ bản</label>
+                    <input value="{{dataEdit.salaryBasic}}" rules="required" type="text" name="salaryBasic" id="description" placeholder="VD: Quốc Khánh"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                 <div class="form-group ">
+                    <label for="expense" class="form-label">Phí phải trả</label>
+                    <input value="{{dataEdit.expense}}" rules="required" type="text" name="expense" id="heading"
+                        placeholder="VD: Katsuobushi cá ngừ bào - Tinh hoa ẩm thực xứ Phù Tang" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="salary" class="form-label">Lương thực nhận</label>
+                    <input value="{{dataEdit.salary}}" rules="required" type="text" name="salary" id="description" placeholder="VD: Quốc Khánh"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="quantity" class="form-label">Số lượng cần tuyển</label>
+                    <input value="{{dataEdit.quantity}}" rules="required" type="text" name="quantity" id="description" placeholder="VD: Quốc Khánh"
+                        class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="request" class="form-label">Trình độ</label>
+                    <input value="{{dataEdit.request}}" rules="required" type="text" name="request" id="request" class="form-control"
+                        placeholder="vd: 2 người">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="recruimentDay" class="form-label">Ngày thêm</label>
+                    <input value="{{dataEdit.recruimentDay}}" rules="required" type="date" name="date" id="date" class="form-control"
+                        placeholder="dd-mm-yyyy">
+                    <span class="form-message"></span>
+                </div>
+             
+            
+                <button type="submit" class="btn btn-submit">Thêm</button>
+                <button type="reset" class="btn">Làm mới</button>
+            </form>
+        </div>
+
+
+    </div>
+</div>
